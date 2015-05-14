@@ -1,0 +1,38 @@
+package hw20150502;
+
+ abstract class Vehicle {
+	 	protected String name;
+	 	protected double oil;
+	 	protected double speed;
+	 	protected  int racedistance;
+	 	public abstract void setRun(String a);
+	 	public abstract void setOil(int a);
+	 	public abstract void SetDistance(int a);
+
+	 	
+	 	
+}
+
+
+package hw20150502;
+
+interface Racing {
+	public abstract void setName(String a );
+	public abstract void setPostion(double n);
+	
+	public abstract void SetSpeedUp(int s);
+	public abstract void trick(int y);
+	public abstract void race(int z);
+	public abstract void setCarDurability(int x);
+	
+	
+	
+	
+}
+
+package hw20150502;
+
+interface  Raceway {
+	 public abstract void SetDistance(int a);
+}
+
