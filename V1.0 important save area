@@ -1,0 +1,123 @@
+package hw20150502;
+
+class all extends Vehicle implements Racing, Raceway {
+	int setOil, setSpeed, setCarDurability, SetSpeedUp, SetDistance, setrank,
+			setcheck=1;
+	double setPostion;
+	String setName, setRun;
+
+	public all(String name, int speed, int oil, int postion, int carDurability,
+			int speedUp, int range) {
+		setName(name);
+		setOil(oil);
+		setSpeed(speed);
+		setPostion(postion);
+		setCarDurability(carDurability);
+		SetSpeedUp(speedUp);
+		SetDistance(range);
+		setRun = "yes";
+		setRun(setRun);
+	}
+
+	public void setOil(int a) {
+		this.setOil = a;
+	}
+
+	public int getOil() {
+		return setOil;
+	}
+
+	public void setSpeed(int a) {
+		this.setSpeed = a;
+	}
+
+	public int getSpeed() {
+		return setSpeed;
+	}
+
+	public void setName(String a) {
+		this.setName = a;
+	}
+
+	public String getName() {
+		return setName;
+	}
+
+	public void setPostion(double n) {
+		this.setPostion = n;
+	}
+
+	public double getPostion() {
+		return setPostion;
+	}
+
+	public void setCarDurability(int x) {
+		this.setCarDurability = x;
+	}
+
+	public int getCarDurability() {
+		return setCarDurability;
+	}
+
+	public void setRun(String a) {
+		this.setRun = a;
+	}
+
+	public String getRun() {
+		return setRun;
+	}
+
+	public void SetSpeedUp(int s) {
+		this.SetSpeedUp = s;
+	}
+
+	public int getSpeedUp() {
+		return SetSpeedUp;
+	}
+
+	public void trick(int y) {
+
+	}
+
+	public void race(int z) {
+
+	}
+
+	public void SetDistance(int a) {
+		this.SetDistance = a;
+	}
+
+	public int getDistance() {
+		return SetDistance;
+	}
+
+	public void setrank(int a) {
+		int x = 1;
+		setcheck(x);
+		if(this.getcheck()<1){
+		this.setrank = a;
+		}else{
+			
+		}
+		
+		
+		x++;
+	}
+
+	public int getrank() {
+		return setrank;
+	}
+
+	public void setcheck(int a) {
+		if (this.getcheck() <= 1) {
+			setcheck = 1;
+		} else {
+
+		}
+	}
+
+	public int getcheck() {
+		return setrank;
+	}
+
+}
