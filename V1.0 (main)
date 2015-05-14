@@ -1,0 +1,82 @@
+package hw20150502;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class control {
+
+	public static void main(String[] args) {
+		ArrayList<all> allArr = new ArrayList<all>();
+		// all RacingCar=new all();
+		Scanner scn = new Scanner(System.in);
+		System.out.println("第一輛車為Sonic  第二輛車為Asurada   第三輛車為F1   ");
+		int range = (int) (Math.random() * 501 + 1000); // 1000~1500 場地大小;
+		// System.out.println(range); 測試用
+		for (int i = 0; i < 3; i++) {
+			//all RacingCar = new all();  //每次從NEW 一次
+			System.out
+					.println("輸入油量&速度&賽車名稱(自必須完全正確)&目前位置(開始第一場請設定為0)&賽車耐久度(設定為100)&每分鐘加速度");
+			int oil = scn.nextInt();
+			int speed = scn.nextInt();
+			String name = scn.next(); // 用nextLine 會有問題
+			int postion = scn.nextInt();
+			int carDurability = scn.nextInt();
+			int speedUp = scn.nextInt();
+			allArr.add(new all(name, speed, oil, postion, carDurability,
+					speedUp, range));
+		/*	RacingCar.all(name, speed,oil , postion, carDurability, speedUp,
+					range);
+			allArr.add(RacingCar);*/
+
+		}
+		/*
+		 * for (int z = 0; z < 3; z++) { //測試區
+		 * 
+		 * 
+		 * System.out.println("賽車名稱" + allArr.get(z).getName() + "目前油量" +
+		 * allArr.get(z).getOil() + "目前速度" + allArr.get(z).getSpeed() + "目前位置" +
+		 * allArr.get(z).getPostion() + "耐久度" + allArr.get(z).getCarDurability()
+		 * +
+		 * "目前加速度"+allArr.get(z).getSpeedUp()+"剩餘距離"+allArr.get(z).getDistance()
+		 * ); }
+		 */
+		for (int z = 0;z<5; z++) {
+			for (all i : allArr) { // 使用動態下去抓 ArrayList<all> allArr = new
+									// ArrayList<all>(); 寫在筆記本地1頁
+
+				int oil = i.getOil();
+				i.setOil(oil);
+
+				int speed = i.getSpeed() + i.getSpeedUp();
+				i.setSpeed(speed);
+
+				String name = i.getName();
+				i.setName(name);
+
+				double postion =( i.getPostion()+i.getSpeed())/range;
+				i.setPostion(postion);
+
+				int carDurability = i.getCarDurability();
+				i.setCarDurability(carDurability);
+
+				int speedUp = i.getSpeedUp(); // 其實不會變
+
+				int SetDistance = i.getDistance() - speed; // 剩下距離
+				i.SetDistance(SetDistance);
+				if(i.SetDistance<=0){
+					i.SetDistance(0);
+
+				}
+				System.out.println("賽車名稱" + i.getName() + "目前油量" + i.getOil()
+						+ "目前速度" + i.getSpeed() + "目前位置" + i.getPostion()
+						+ "耐久度" + i.getCarDurability() + "目前加速度"
+						+ i.getSpeedUp() + "剩餘距離" + i.getDistance());
+				/*if(i.SetDistance<=0){   //測試
+					break;
+				}*/
+			}
+			
+
+		}
+	}
+}
